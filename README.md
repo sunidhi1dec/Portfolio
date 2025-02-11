@@ -2,7 +2,7 @@
 A personal portfolio showcasing my projects, skills, and experience as a software developer.
 
 ## Description
-This is my personal portfolio website built using HTML, CSS, and JavaScript. It includes details about my skills, projects, and professional experience. It serves as a showcase of my work and a way for potential employers or collaborators to get in touch with me.
+This is my personal portfolio website built using HTML, CSS, and JavaScript as frontend and PHP and MySQL for backend and database connectivity. It includes details about my skills, projects, and professional experience. It serves as a showcase of my work and a way for potential employers or collaborators to get in touch with me.
 
 ## Features
 - A clean, responsive design.
@@ -16,6 +16,8 @@ This is my personal portfolio website built using HTML, CSS, and JavaScript. It 
 - **CSS3** (with Flexbox and Grid)
 - **JavaScript** (for interactivity)
 - **GitHub Pages** (for hosting)
+- **PHP(for backend)
+- **MySQL(database)
 
 ## Installation
 To view this portfolio locally, follow these steps:
