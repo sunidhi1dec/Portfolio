@@ -55,12 +55,15 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+        main{
+            flex: 1;
+        }    
         body {
             background-color: rgb(0, 0, 0);
             color: rgb(255, 255, 255);
             font-family: 'Poppins', sans-serif;
             background-image: url(backdrop3.jpg);
+            display: flex;
         }
         
         nav {
@@ -231,7 +234,7 @@
         .fourthSection {
             max-width: 80vw;
             margin: auto;
-            height: 80vh;
+            min-height: 60vh;
         }
         
         .fourthSection h1 {
