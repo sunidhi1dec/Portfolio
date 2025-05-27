@@ -18,9 +18,9 @@
             background-image: url(backdrop3.jpg);
         }
         @media (max-width: 600px) {
-          img {
-             width: 100%;
-             height: auto;
+          .rightsection img {
+             max-width: 220px;
+             border-width: 6px;
            }
         }
 
@@ -104,9 +104,14 @@
         }
         
         .rightSection img {
+            width: 100%;
+            max-width:350px;
+            height: auto;
             border-radius: 50%;
             object-fit: cover;
-            border: 20px solid rgb(40, 160, 225);
+            border: 10px solid rgb(40, 160, 225);
+            display: block;
+            margin: 0 auto;
         }
         
         .purple,
