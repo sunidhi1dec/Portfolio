@@ -45,6 +45,7 @@
 
 <head>
     <title>PORTFOLIO-WEBSITE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -52,6 +53,7 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         
         body {
@@ -72,16 +74,19 @@
         nav ul {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
         
         nav ul li {
             list-style: none;
-            margin: 0 23px;
+            margin: 0 15px;
         }
         
         nav ul li a {
             text-decoration: none;
             color: beige;
+            display: flex;
+            align-items: center;
         }
         
         nav ul li a:hover {
@@ -99,10 +104,12 @@
             display: flex;
             justify-content: space-around;
             margin: 125px 10px;
+            flex-wrap: wrap;
         }
         
         .firstSection>div {
             width: 30%;
+            min-width: 275px;
         }
         
         .leftsection {
@@ -111,7 +118,14 @@
         }
         
         .rightSection img {
-            width: 80%;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 10px solid rgb(40, 160, 225);
+            display: block;
+            margin: 0 auto;
         }
         
         .secondSection {
@@ -239,13 +253,132 @@
         
         .footer {
             display: flex;
-            margin: 20px 122px;
+            flex-wrap: wrap;
+            margin: 20px 20px;
             padding: 7px;
+            justify-content: space-between;
+            align-items: center;
         }
         
         footer .footer .rights {
             text-align: right;
             padding-left: 350px;
+        }
+        @media (max-width: 1100px) {
+            .firstSection {
+                flex-direction: column;
+                align-items: center;
+            }
+            .firstSection>div {
+                width: 80%;
+                min-width: 200px;
+            }
+            .thirdSection, .fourthSection, .secondSection {
+                max-width: 98vw;
+            }
+        }
+        @media (max-width: 900px) {
+            .Project {
+                grid-template-columns: 1fr;
+                height: auto;
+                grid-gap: 30px;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 650px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            nav ul li {
+                margin: 6px 0;
+            }
+            .left {
+                font-size: 1.4rem;
+            }
+            .footer {
+                margin: 10px 10px;
+            }
+            .fourthSection form {
+                font-size: 1rem !important;
+            }
+        }
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+            }
+            .firstSection>div {
+                width: 95%;
+                min-width: 140px;
+            }
+            .rightSection img {
+                max-width: 90vw;
+                border-width: 4px;
+            }
+            .fourthSection form input,
+            .fourthSection form textarea {
+                font-size: 1rem !important;
+                height: auto !important;
+            }
+        }
+        .fourthSection form {
+            font-size: 20px;
+            width: 80vw;
+            max-width: 500px;
+            margin: auto;
+            background: rgba(30, 30, 30, 0.85);
+            padding: 20px 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+        .fourthSection form input[type="text"],
+        .fourthSection form input[type="email"],
+        .fourthSection form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 16px;
+            font-size: 18px;
+            border-radius: 6px;
+            border: 1px solid #dcdcdc;
+            background: #fafafa;
+            color: #222;
+            resize: vertical;
+        }
+        .fourthSection form input[type="submit"] {
+            background-color: rgb(40, 160, 225);
+            color: #fff;
+            font-weight: bolder;
+            font-size: 20px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .fourthSection form input[type="submit"]:hover {
+            background-color: rgb(30, 120, 180);
+        }
+        .fourthSection label {
+            display: block;
+            margin-top: 8px;
+        }
+        .contact-icons {
+            margin-top: 24px;
+            text-align: center;
+        }
+        .contact-icons a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .contact-icons svg {
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -413,12 +546,21 @@
                 <br><br>
                 <input type="email" name="email" placeholder="Enter your email" style="width: 30vw; height: 2vw; font-size: 20px;"></input><br><br>
                 <label for="message">Message</label>
-                <br><br>
-                <input type="textarea" name="message" placeholder="Enter your message" style="width: 30vw; height: 5vw; font-size: 20px;"></input><br>
-                <input type="submit" style="margin-left: 30vw; background-color:rgb(40, 160, 225) ;font-weight: bolder;font-size: 20px; width: 80px;">
+                <textarea name="message" id="message" placeholder="Enter your message" rows="4" required></textarea>
+                <input type="submit" value="Send">
+                
             </FORM>
-
-
+             <div class="contact-icons">
+                <a href="mailto:sunidhi@example.com" title="Mail Me">
+                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 13.065l-11.12-7.408a2 2 0 0 1 1.12-.657C2.54 5 21.46 5 21.999 5c.405.024.784.24 1.12.657L12 13.065zm10.561-7.408L12 14.935.439 5.657A3.978 3.978 0 0 0 0 7.999V19a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V8a3.978 3.978 0 0 0-.439-2.343z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/sunidhi-srivastava" target="_blank" title="LinkedIn">
+                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.062-1.867-3.062-1.868 0-2.155 1.459-2.155 2.968v5.698h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.84-1.563 3.037 0 3.6 2.001 3.6 4.604v5.592z"/></svg>
+                </a>
+                <a href="https://github.com/sunidhi1dec" target="_blank" title="GitHub">
+                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.304-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.369.823 1.096.823 2.211 0 1.595-.014 2.881-.014 3.274 0 .321.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+            </div>
         </section>
 
     </main>
