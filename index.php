@@ -554,7 +554,7 @@
                 
             </FORM>
              <div class="contact-icons">
-                <a href="mailto:sunidhi@example.com" title="Mail Me">
+                <a href="mailto:sunidhisrivastava1dec@gmail.com" title="Mail Me">
                     <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 13.065l-11.12-7.408a2 2 0 0 1 1.12-.657C2.54 5 21.46 5 21.999 5c.405.024.784.24 1.12.657L12 13.065zm10.561-7.408L12 14.935.439 5.657A3.978 3.978 0 0 0 0 7.999V19a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V8a3.978 3.978 0 0 0-.439-2.343z"/></svg>
                 </a>
                 <a href="https://www.linkedin.com/in/sunidhi-srivastava" target="_blank" title="LinkedIn">
